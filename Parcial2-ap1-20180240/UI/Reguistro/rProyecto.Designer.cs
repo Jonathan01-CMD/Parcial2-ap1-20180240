@@ -38,16 +38,16 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.AgregarButton = new System.Windows.Forms.Button();
             this.TiempoTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.RequerimientosTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TipoTareaComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.AgregarButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NueboButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
@@ -137,19 +137,40 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.groupBox.Controls.Add(this.label4);
             this.groupBox.Location = new System.Drawing.Point(12, 165);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(568, 304);
+            this.groupBox.Size = new System.Drawing.Size(568, 288);
             this.groupBox.TabIndex = 19;
             this.groupBox.TabStop = false;
             // 
-            // label4
+            // button1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Detalle de Tarea Realisada";
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(6, 259);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 27);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Remover Fila";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 66);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(556, 188);
+            this.dataGridView1.TabIndex = 16;
+            // 
+            // AgregarButton
+            // 
+            this.AgregarButton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarButton.Image")));
+            this.AgregarButton.Location = new System.Drawing.Point(483, 36);
+            this.AgregarButton.Name = "AgregarButton";
+            this.AgregarButton.Size = new System.Drawing.Size(79, 24);
+            this.AgregarButton.TabIndex = 15;
+            this.AgregarButton.Text = "Agregar";
+            this.AgregarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AgregarButton.UseVisualStyleBackColor = true;
             // 
             // TiempoTextBox
             // 
@@ -204,41 +225,20 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.label7.TabIndex = 9;
             this.label7.Text = "Tipo de Tarea";
             // 
-            // AgregarButton
+            // label4
             // 
-            this.AgregarButton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarButton.Image")));
-            this.AgregarButton.Location = new System.Drawing.Point(483, 36);
-            this.AgregarButton.Name = "AgregarButton";
-            this.AgregarButton.Size = new System.Drawing.Size(79, 24);
-            this.AgregarButton.TabIndex = 15;
-            this.AgregarButton.Text = "Agregar";
-            this.AgregarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AgregarButton.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 188);
-            this.dataGridView1.TabIndex = 16;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(6, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 27);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Remover Fila";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Detalle de Tarea Realisada";
             // 
             // EliminarButton
             // 
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
-            this.EliminarButton.Location = new System.Drawing.Point(199, 475);
+            this.EliminarButton.Location = new System.Drawing.Point(199, 458);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(85, 33);
             this.EliminarButton.TabIndex = 22;
@@ -249,7 +249,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             // NueboButton
             // 
             this.NueboButton.Image = ((System.Drawing.Image)(resources.GetObject("NueboButton.Image")));
-            this.NueboButton.Location = new System.Drawing.Point(18, 475);
+            this.NueboButton.Location = new System.Drawing.Point(18, 458);
             this.NueboButton.Name = "NueboButton";
             this.NueboButton.Size = new System.Drawing.Size(78, 33);
             this.NueboButton.TabIndex = 0;
@@ -260,7 +260,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             // GuardarButton
             // 
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
-            this.GuardarButton.Location = new System.Drawing.Point(102, 476);
+            this.GuardarButton.Location = new System.Drawing.Point(102, 459);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(91, 32);
             this.GuardarButton.TabIndex = 21;
@@ -270,7 +270,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             // 
             // TiempoTotalTextBox
             // 
-            this.TiempoTotalTextBox.Location = new System.Drawing.Point(419, 472);
+            this.TiempoTotalTextBox.Location = new System.Drawing.Point(424, 458);
             this.TiempoTotalTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TiempoTotalTextBox.Name = "TiempoTotalTextBox";
             this.TiempoTotalTextBox.Size = new System.Drawing.Size(150, 23);
@@ -279,7 +279,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(338, 472);
+            this.label8.Location = new System.Drawing.Point(343, 456);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 15);
             this.label8.TabIndex = 23;
