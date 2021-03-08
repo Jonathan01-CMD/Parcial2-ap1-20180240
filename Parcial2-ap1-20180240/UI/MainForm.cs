@@ -32,9 +32,5 @@ namespace Parcial2_ap1_20180240.UI
             proyecto.MdiParent = this;
             proyecto.Show();
         }
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
     }
 }
