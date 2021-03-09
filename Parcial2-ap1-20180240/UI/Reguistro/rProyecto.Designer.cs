@@ -29,6 +29,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rProyecto));
             this.BuscarButton = new System.Windows.Forms.Button();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
@@ -36,10 +37,10 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.ProyectoIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RemoverFilaButton = new System.Windows.Forms.Button();
+            this.DataGridView = new System.Windows.Forms.DataGridView();
             this.AgregarButton = new System.Windows.Forms.Button();
             this.TiempoTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,13 +50,15 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.NueboButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.TiempoTotalTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ProyectoIdNumericUpDown)).BeginInit();
             this.groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // BuscarButton
@@ -69,6 +72,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // DescripcionTextBox
             // 
@@ -95,7 +99,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.FechaDateTimePicker.Location = new System.Drawing.Point(12, 68);
             this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
-            this.FechaDateTimePicker.Size = new System.Drawing.Size(181, 23);
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(98, 23);
             this.FechaDateTimePicker.TabIndex = 14;
             // 
             // label2
@@ -116,17 +120,17 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.label1.TabIndex = 12;
             this.label1.Text = "Proyecto Id";
             // 
-            // numericUpDown1
+            // ProyectoIdNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 26);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(56, 23);
-            this.numericUpDown1.TabIndex = 18;
+            this.ProyectoIdNumericUpDown.Location = new System.Drawing.Point(12, 26);
+            this.ProyectoIdNumericUpDown.Name = "ProyectoIdNumericUpDown";
+            this.ProyectoIdNumericUpDown.Size = new System.Drawing.Size(56, 23);
+            this.ProyectoIdNumericUpDown.TabIndex = 18;
             // 
             // groupBox
             // 
-            this.groupBox.Controls.Add(this.button1);
-            this.groupBox.Controls.Add(this.dataGridView1);
+            this.groupBox.Controls.Add(this.RemoverFilaButton);
+            this.groupBox.Controls.Add(this.DataGridView);
             this.groupBox.Controls.Add(this.AgregarButton);
             this.groupBox.Controls.Add(this.TiempoTextBox);
             this.groupBox.Controls.Add(this.label6);
@@ -141,25 +145,26 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.groupBox.TabIndex = 19;
             this.groupBox.TabStop = false;
             // 
-            // button1
+            // RemoverFilaButton
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(6, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 27);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Remover Fila";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.RemoverFilaButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoverFilaButton.Image")));
+            this.RemoverFilaButton.Location = new System.Drawing.Point(6, 259);
+            this.RemoverFilaButton.Name = "RemoverFilaButton";
+            this.RemoverFilaButton.Size = new System.Drawing.Size(102, 27);
+            this.RemoverFilaButton.TabIndex = 17;
+            this.RemoverFilaButton.Text = "Remover Fila";
+            this.RemoverFilaButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.RemoverFilaButton.UseVisualStyleBackColor = true;
+            this.RemoverFilaButton.Click += new System.EventHandler(this.RemoverFilaButton_Click);
             // 
-            // dataGridView1
+            // DataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 188);
-            this.dataGridView1.TabIndex = 16;
+            this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView.Location = new System.Drawing.Point(6, 66);
+            this.DataGridView.Name = "DataGridView";
+            this.DataGridView.RowTemplate.Height = 25;
+            this.DataGridView.Size = new System.Drawing.Size(556, 188);
+            this.DataGridView.TabIndex = 16;
             // 
             // AgregarButton
             // 
@@ -171,6 +176,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.AgregarButton.Text = "Agregar";
             this.AgregarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AgregarButton.UseVisualStyleBackColor = true;
+            this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
             // 
             // TiempoTextBox
             // 
@@ -245,17 +251,19 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // NueboButton
+            // NuevoButton
             // 
-            this.NueboButton.Image = ((System.Drawing.Image)(resources.GetObject("NueboButton.Image")));
-            this.NueboButton.Location = new System.Drawing.Point(18, 458);
-            this.NueboButton.Name = "NueboButton";
-            this.NueboButton.Size = new System.Drawing.Size(78, 33);
-            this.NueboButton.TabIndex = 0;
-            this.NueboButton.Text = "Nuevo";
-            this.NueboButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.NueboButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
+            this.NuevoButton.Location = new System.Drawing.Point(18, 458);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(78, 33);
+            this.NuevoButton.TabIndex = 0;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
@@ -267,6 +275,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // TiempoTotalTextBox
             // 
@@ -285,6 +294,10 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.label8.TabIndex = 23;
             this.label8.Text = "Tiempo Total";
             // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
+            // 
             // rProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -294,9 +307,9 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.Controls.Add(this.label8);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
-            this.Controls.Add(this.NueboButton);
+            this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.groupBox);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.ProyectoIdNumericUpDown);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.label3);
@@ -306,10 +319,12 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rProyecto";
             this.Text = "Registro de Proyecto";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.rProyecto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ProyectoIdNumericUpDown)).EndInit();
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,10 +338,10 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown ProyectoIdNumericUpDown;
         private System.Windows.Forms.GroupBox groupBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button RemoverFilaButton;
+        private System.Windows.Forms.DataGridView DataGridView;
         private System.Windows.Forms.Button AgregarButton;
         private System.Windows.Forms.TextBox TiempoTextBox;
         private System.Windows.Forms.Label label6;
@@ -336,9 +351,10 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button NueboButton;
+        private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.TextBox TiempoTotalTextBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }
