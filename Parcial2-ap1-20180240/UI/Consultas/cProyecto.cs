@@ -47,5 +47,10 @@ namespace Parcial2_ap1_20180240.UI.Consultas
             DataGridView.DataSource = null;
             DataGridView.DataSource = lista;
         }
+
+        private void cProyecto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,9 +33,8 @@ namespace Parcial2_ap1_20180240.BLL
         }
         public static bool Insertar(Proyectos proyectos)
         {
-            Contexto contexto = new Contexto();
             bool paso = false;
-
+            Contexto contexto = new Contexto();
             try
             {
                 contexto.Add(proyectos);
@@ -52,29 +51,31 @@ namespace Parcial2_ap1_20180240.BLL
             return paso;
         }
 
-        public static bool Modificar(Proyectos proyectos)
+        public static bool Modificar(Proyectos proyecto)
         {
-        Contexto contexto = new Contexto();
-        bool paso = false;
-        try
-        {
-            contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectoDetalle Where ProyectoId ={proyectos.ProyectoId}");
-            foreach (var anterior in proyectos.Detalle)
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
             {
-                contexto.Entry(anterior).State = EntityState.Added;
+                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectoDetalle Where ProyectoId={proyecto.ProyectoId}");
+                foreach (var item in proyecto.Detalle)
+                {
+                    contexto.Entry(item).State = EntityState.Added;
+                }
+                contexto.Entry(proyecto).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
             }
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-        finally
-        {
-            contexto.Dispose();
-        }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
 
-        return paso;
+            return paso;
      
         }
         public static bool Guardar(Proyectos proyectos)

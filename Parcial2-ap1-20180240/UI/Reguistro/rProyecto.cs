@@ -49,7 +49,6 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
         {
             this.Detalle = new List<ProyectoDetalle>();
             ProyectoIdNumericUpDown.Value = proyectos.ProyectoId;
-            TiempoTextBox.Text = proyectos.TiempoTotal.ToString();
             FechaDateTimePicker.Value = proyectos.Fecha;
             DescripcionTextBox.Text = proyectos.Descripcion;
             TiempoTotalTextBox.Text = proyectos.TiempoTotal.ToString();
@@ -60,17 +59,15 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
         private Proyectos LLenarClase()
         {
             Proyectos proyectos = new Proyectos();
-            proyectos.ProyectoId.ToString();
-            TiempoTotalTextBox.Text = proyectos.TiempoTotal.ToString();
+           
+            proyectos.ProyectoId = Convert.ToInt32(ProyectoIdNumericUpDown.Value);
             proyectos.Fecha = FechaDateTimePicker.Value.Date;
             proyectos.Descripcion = DescripcionTextBox.Text;
+            proyectos.TiempoTotal = Convert.ToInt32(TiempoTotalTextBox.Text);
+            CargaGrid();
             return proyectos;
         }
-        /* bool ExisteEnLaBasedeDato()
-        {
-            Proyectos proyectos = ProyectosBLL.Buscar(ProyectoIdNumericUpDown);
-            return (proyectos != null);
-        }*/
+        
         public bool Validar()
         {
             bool paso = true;
@@ -208,6 +205,11 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             {
                 MessageBox.Show("Rol No existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

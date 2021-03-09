@@ -165,6 +165,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             this.DataGridView.RowTemplate.Height = 25;
             this.DataGridView.Size = new System.Drawing.Size(556, 188);
             this.DataGridView.TabIndex = 16;
+            this.DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
             // AgregarButton
             // 
