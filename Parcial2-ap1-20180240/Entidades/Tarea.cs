@@ -16,5 +16,6 @@ namespace Parcial2_ap1_20180240.Entidades
         [ForeignKey("TareaId")]
         public virtual Tarea Tareas { get; set; }
 
+
     }
 }

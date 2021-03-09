@@ -108,6 +108,7 @@ namespace Parcial2_ap1_20180240.UI.Consultas
             this.Controls.Add(this.label1);
             this.Name = "cProyecto";
             this.Text = "Consulta de Proyectos";
+            this.Load += new System.EventHandler(this.cProyecto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

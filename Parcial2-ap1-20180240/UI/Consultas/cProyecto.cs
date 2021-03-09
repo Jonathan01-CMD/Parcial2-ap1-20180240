@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial2_ap1_20180240.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace Parcial2_ap1_20180240.UI.Consultas
 {
     public partial class cProyecto : Form
     {
+        public List<ProyectoDetalle> Detalle { get; set; }
         public cProyecto()
         {
             InitializeComponent();
+            this.Detalle = new List<ProyectoDetalle>();
+        }
+
+        private void cProyecto_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

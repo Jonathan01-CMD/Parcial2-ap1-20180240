@@ -17,14 +17,16 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
         public rProyecto()
         {
             InitializeComponent();
+            this.Detalle = new List<ProyectoDetalle>();
+            TiempoTotalTextBox.Text = 0.ToString();
         }
         public List<ProyectoDetalle> Detalle { get; set; }
 
         private void rProyecto_Load(object sender, EventArgs e)
         {
             TipoTareaComboBox.DataSource = TareasBLL.GetTarea();
-            TipoTareaComboBox.DisplayMember = "TareaId";
-            TipoTareaComboBox.ValueMember = "TipoTarea";
+            TipoTareaComboBox.ValueMember = "TareaId";
+            TipoTareaComboBox.DisplayMember = "TipoTarea";
         }
         public void CargaGrid()
         {
@@ -49,7 +51,10 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             ProyectoIdNumericUpDown.Value = proyectos.ProyectoId;
             TiempoTextBox.Text = proyectos.TiempoTotal.ToString();
             FechaDateTimePicker.Value = proyectos.Fecha;
-            DescripcionTextBox.Text = proyectos.TiempoTotal.ToString();
+            DescripcionTextBox.Text = proyectos.Descripcion;
+            TiempoTotalTextBox.Text = proyectos.TiempoTotal.ToString();
+            this.Detalle = proyectos.Detalle;
+            CargaGrid();
         }
 
         private Proyectos LLenarClase()
@@ -106,6 +111,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             if (proyecto != null)
             {
                 MessageBox.Show("Proyecto Encontrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LLenarCampo(proyecto);
             }
             else
             {
@@ -117,6 +123,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
         {
             if (DataGridView.DataSource != null)
                 this.Detalle = (List<ProyectoDetalle>)DataGridView.DataSource;
+
             if (TipoTareaComboBox.Text == string.Empty)
             {
                 MessageBox.Show("Ingrese un Tipo de Tarea", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -124,22 +131,21 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             int total;
             int tiempo;
 
-            Tarea tarea = TareasBLL.Buscar(Convert.ToInt32(TipoTareaComboBox));
+            Tarea tareas = TareasBLL.Buscar(Convert.ToInt32(TipoTareaComboBox.SelectedValue));
 
-            this.Detalle.Add(new ProyectoDetalle()
-            {
-                TipoId = Convert.ToInt32(TipoTareaComboBox.Text),
-                TipoTarea = tarea.TipoTarea,
-                Requerimiento = RequerimientosTextBox.Text,
-                Tiempo = Convert.ToInt32(TiempoTextBox.Text)
-            });
+            this.Detalle.Add(new ProyectoDetalle(
+                TipoId : tareas.TareaId,
+                TipoTarea : tareas.TipoTarea,
+                Requerimiento : RequerimientosTextBox.Text,
+                Tiempo : Convert.ToInt32(TiempoTextBox.Text)
+                )
+            );
             CargaGrid();
-            TipoTareaComboBox.Focus();
 
             total = Convert.ToInt32(TiempoTotalTextBox.Text);
             tiempo = Convert.ToInt32(TiempoTextBox.Text);
             total += tiempo;
-            TiempoTotalTextBox.Text = Convert.ToString(total);
+            TiempoTotalTextBox.Text = total.ToString();
         }
 
         private void RemoverFilaButton_Click(object sender, EventArgs e)

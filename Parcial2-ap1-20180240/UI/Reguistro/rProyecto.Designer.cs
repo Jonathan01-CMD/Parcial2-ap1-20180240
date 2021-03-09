@@ -214,7 +214,6 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             // 
             // TipoTareaComboBox
             // 
-            this.TipoTareaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoTareaComboBox.FormattingEnabled = true;
             this.TipoTareaComboBox.Location = new System.Drawing.Point(6, 37);
             this.TipoTareaComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
