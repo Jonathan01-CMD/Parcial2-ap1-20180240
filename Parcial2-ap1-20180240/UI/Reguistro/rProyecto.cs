@@ -123,6 +123,7 @@ namespace Parcial2_ap1_20180240.UI.Reguistro
             }
             int total;
             int tiempo;
+
             Tarea tarea = TareasBLL.Buscar(Convert.ToInt32(TipoTareaComboBox));
 
             this.Detalle.Add(new ProyectoDetalle()
