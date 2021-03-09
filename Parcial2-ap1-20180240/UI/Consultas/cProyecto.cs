@@ -21,11 +21,6 @@ namespace Parcial2_ap1_20180240.UI.Consultas
             this.Detalle = new List<ProyectoDetalle>();
         }
 
-        private void cProyecto_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             var lista = new List<Proyectos>();
@@ -35,7 +30,7 @@ namespace Parcial2_ap1_20180240.UI.Consultas
                 switch (FiltroComboBox.SelectedIndex)
                 {
                     case 0:
-                        lista = ProyectosBLL.GetList(r => r.ProyectoId == Converciones.ToInt(FiltroComboBox.Text));
+                        lista = ProyectosBLL.GetList(r => r.ProyectoId == Converciones.ToInt(CriterioTextBox.Text));
                         break;
 
                     case 1:

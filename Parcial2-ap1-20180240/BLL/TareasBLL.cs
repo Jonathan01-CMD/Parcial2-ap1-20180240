@@ -48,7 +48,7 @@ namespace Parcial2_ap1_20180240.BLL
             }
             return lista;
         }
-        public static List<Tarea>GetlList(Expression<Func<Tarea, bool>> criterios)
+        public static List<Tarea>GetList(Expression<Func<Tarea, bool>> criterios)
         {
             Contexto contexto = new Contexto();
             List<Tarea> lista = new List<Tarea>();

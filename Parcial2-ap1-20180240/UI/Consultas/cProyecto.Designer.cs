@@ -93,17 +93,17 @@ namespace Parcial2_ap1_20180240.UI.Consultas
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView.Location = new System.Drawing.Point(12, 54);
+            this.DataGridView.Location = new System.Drawing.Point(2, 56);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.RowTemplate.Height = 25;
-            this.DataGridView.Size = new System.Drawing.Size(687, 390);
+            this.DataGridView.Size = new System.Drawing.Size(466, 399);
             this.DataGridView.TabIndex = 5;
             // 
             // cProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 456);
+            this.ClientSize = new System.Drawing.Size(471, 456);
             this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.CriterioTextBox);
@@ -112,7 +112,6 @@ namespace Parcial2_ap1_20180240.UI.Consultas
             this.Controls.Add(this.label1);
             this.Name = "cProyecto";
             this.Text = "Consulta de Proyectos";
-            this.Load += new System.EventHandler(this.cProyecto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
