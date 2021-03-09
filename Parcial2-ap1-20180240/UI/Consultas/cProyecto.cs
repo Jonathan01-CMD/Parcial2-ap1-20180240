@@ -1,4 +1,5 @@
-﻿using Parcial2_ap1_20180240.Entidades;
+﻿using Parcial2_ap1_20180240.BLL;
+using Parcial2_ap1_20180240.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,33 @@ namespace Parcial2_ap1_20180240.UI.Consultas
         private void cProyecto_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            var lista = new List<Proyectos>();
+
+            if (!string.IsNullOrEmpty(CriterioTextBox.Text))
+            {
+                switch (FiltroComboBox.SelectedIndex)
+                {
+                    case 0:
+                        lista = ProyectosBLL.GetList(r => r.ProyectoId == Converciones.ToInt(FiltroComboBox.Text));
+                        break;
+
+                    case 1:
+                        lista = ProyectosBLL.GetList(e => e.Descripcion.Contains(CriterioTextBox.Text));
+                        break;
+
+                }
+            }
+            else
+            {
+                lista = ProyectosBLL.GetList(c => true);
+            }
+
+            DataGridView.DataSource = null;
+            DataGridView.DataSource = lista;
         }
     }
 }

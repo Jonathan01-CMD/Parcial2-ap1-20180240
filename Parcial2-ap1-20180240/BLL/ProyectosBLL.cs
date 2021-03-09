@@ -51,6 +51,7 @@ namespace Parcial2_ap1_20180240.BLL
             }
             return paso;
         }
+
         public static bool Modificar(Proyectos proyectos)
         {
         Contexto contexto = new Contexto();
@@ -143,7 +144,7 @@ namespace Parcial2_ap1_20180240.BLL
             }
             return lista;
         }
-        public static List<Proyectos>GetlList(Expression<Func<Proyectos,bool>> criterios)
+        public static List<Proyectos>GetList(Expression<Func<Proyectos,bool>> criterios)
         {
             Contexto contexto = new Contexto();
             List<Proyectos> lista = new List<Proyectos>();

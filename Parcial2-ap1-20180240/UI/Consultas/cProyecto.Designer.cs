@@ -32,11 +32,11 @@ namespace Parcial2_ap1_20180240.UI.Consultas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cProyecto));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
+            this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.DataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,20 +57,23 @@ namespace Parcial2_ap1_20180240.UI.Consultas
             this.label2.TabIndex = 1;
             this.label2.Text = "Criterio";
             // 
-            // comboBox1
+            // FiltroComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 2;
+            this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Items.AddRange(new object[] {
+            "ProyectoId",
+            "Descripción"});
+            this.FiltroComboBox.Location = new System.Drawing.Point(12, 27);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(121, 23);
+            this.FiltroComboBox.TabIndex = 2;
             // 
-            // textBox1
+            // CriterioTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 23);
-            this.textBox1.TabIndex = 3;
+            this.CriterioTextBox.Location = new System.Drawing.Point(139, 27);
+            this.CriterioTextBox.Name = "CriterioTextBox";
+            this.CriterioTextBox.Size = new System.Drawing.Size(138, 23);
+            this.CriterioTextBox.TabIndex = 3;
             // 
             // BuscarButton
             // 
@@ -82,34 +85,35 @@ namespace Parcial2_ap1_20180240.UI.Consultas
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
-            // dataGridView1
+            // DataGridView
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(687, 390);
-            this.dataGridView1.TabIndex = 5;
+            this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView.Location = new System.Drawing.Point(12, 54);
+            this.DataGridView.Name = "DataGridView";
+            this.DataGridView.RowTemplate.Height = 25;
+            this.DataGridView.Size = new System.Drawing.Size(687, 390);
+            this.DataGridView.TabIndex = 5;
             // 
             // cProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 456);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.BuscarButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CriterioTextBox);
+            this.Controls.Add(this.FiltroComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "cProyecto";
             this.Text = "Consulta de Proyectos";
             this.Load += new System.EventHandler(this.cProyecto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,9 +123,9 @@ namespace Parcial2_ap1_20180240.UI.Consultas
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox FiltroComboBox;
+        private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Button BuscarButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DataGridView;
     }
 }
